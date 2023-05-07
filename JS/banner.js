@@ -1,3 +1,5 @@
+// creates slider
+
 const images = [
   "../Assets/banner/1.png",
   "../Assets/banner/2.png",
@@ -16,6 +18,8 @@ function showCurrentImage() {
   bannerImage.src = images[currentImageIndex];
 }
 
+// shows next image
+
 function showNextImage() {
   currentImageIndex++;
   if (currentImageIndex >= images.length) {
@@ -23,6 +27,8 @@ function showNextImage() {
   }
   showCurrentImage();
 }
+
+// shows previous image
 
 function showPrevImage() {
   currentImageIndex--;

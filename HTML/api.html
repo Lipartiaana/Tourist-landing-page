@@ -4,7 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Api</title>
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <link rel="stylesheet" href="/CSS/api.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="narrow fixed">
+      <nav class="nav">
+        <div class="logo">
+          <a class="name" href="/HTML/index.html">Tourism</a>
+        </div>
+        <input class="menu-checkbox" type="checkbox" id="menu-toggle" />
+        <label class="hamburger-menu" for="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="menu">
+          <li><a href="/HTML/index.html">HOME</a></li>
+          <li><a href="#footer">ABOUT US</a></li>
+          <li><a href="/HTML/index.html#our-services">OUR SERVICES</a></li>
+          <li><a href="/HTML/index.html#popular-package">TOUR PACKAGE</a></li>
+          <li><a href="/HTML/api.html">API</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 class="api-h1">Discover Greece</h1>
+      <h2 class="api-h2">Travel with unique experience</h2>
+      <div id="image-cards-container"></div>
+    </main>
+    <footer id="footer" class="wide">
+      <div class="footer-menu">
+        <div class="footer-menu-links">
+          <ul class="footer-menu-column">
+            <h4>Quick Links</h4>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Company</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Infrastructure</a></li>
+          </ul>
+          <ul class="footer-menu-column">
+            <h4>Support</h4>
+            <li><a href="#">Get Started</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Ipsum</a></li>
+          </ul>
+          <ul class="footer-menu-column">
+            <h4>Address</h4>
+            <li>14, 1 Ellis bridge ST,</li>
+            <li>auckland 3500, Australia</li>
+            <li>+1234567890</li>
+            <li>contactus@demo.com</li>
+          </ul>
+        </div>
+        <div class="footer-subscibtion">
+          <h4>Subscribe to our newsletter</h4>
+          <div class="footer-subscribe">
+            <form action="">
+              <input
+                class="email-input"
+                type="email"
+                placeholder="Your email"
+              />
+              <button type="submit" class="btn"></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="footer-rights">
+        <p>trourism©All Rights Reserved</p>
+      </div>
+    </footer>
+    <script src="/JS/api.js"></script>
+  </body>
 </html>

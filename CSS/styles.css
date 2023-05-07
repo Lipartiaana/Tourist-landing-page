@@ -1,172 +1,17 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  /* width: 1360px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.wide {
-  width: 100%;
-}
-
-.narrow {
-  width: 1173px;
-  margin: auto;
-}
-
-.cover {
-  position: absolute;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-}
-
-a {
-  text-decoration: none;
-}
-
-h1 {
-  margin: 19px auto 55px auto;
-  font-family: "Arial";
-  font-size: 78.74051666259766px;
-  font-weight: normal;
-  line-height: 52.95845413208008px;
-  font-style: normal;
-  text-align: left;
-  color: #ffffff;
-}
-
-h2 {
-  font-family: "Raleway";
-  font-size: 34px;
-  font-weight: normal;
-  line-height: 37px;
-  font-style: normal;
-  text-align: center;
-  color: #ffffff;
-}
-
-h3 {
-  font-family: "Raleway";
-  font-size: 25.9973201751709px;
-  font-weight: normal;
-  line-height: 36.99618911743164px;
-  font-style: normal;
-  text-align: center;
-  color: #1a1a1b;
-}
-
-h4 {
-  font-family: "Raleway";
-  font-size: 15.998350143432617px;
-  font-weight: normal;
-  line-height: 36.99618911743164px;
-  font-style: normal;
-  text-align: center;
-  color: #8d8d8d;
-}
-
-h5 {
-  font-family: "Raleway";
-  font-size: 17.998149871826172px;
-  font-weight: normal;
-  line-height: 21.997732162475586px;
-  font-style: normal;
-  text-align: left;
-  color: #1a1a1b;
-}
-
-h6 {
-  font-family: "Raleway";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 37px;
-  font-style: normal;
-  text-align: left;
-  color: #4b54fa;
-  text-align: center;
-}
-
-p {
-  font-family: "Raleway";
-  font-size: 15.998350143432617px;
-  font-weight: 500;
-  line-height: 21.997732162475586px;
-  font-style: normal;
-  text-align: left;
-  color: #8d8d8d;
-}
-
-::placeholder {
-  font-family: "Raleway";
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 37px;
-  font-style: normal;
-  text-align: left;
-  color: #ffffff;
-}
-
-/*////////////////Header//////////////// */
-
-header {
-  height: 80px;
-}
-
-.name {
-  font-family: "Arial";
-  font-size: 35px;
-  font-weight: normal;
-  line-height: 37px;
-  font-style: normal;
-  text-align: center;
-  color: #232326;
-}
-
-.nav {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.menu li{
-  list-style: none;
-}
-
-.menu a{
-  font-family: "Raleway";
-  font-size: 15.742380142211914px;
-  font-weight: normal;
-  line-height: 36.99894714355469px;
-  font-style: normal;
-  text-align: center;
-  color: #303134;
-}
+@import url(/CSS/shared.css);
 
 /*/ /////////////Banner//////////////// */
 
 .banner {
   margin: auto;
   position: relative;
+  height: 569px;
 }
 
 #banner-image,
 .banner-cover {
   width: 100%;
-  height: 569px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -175,7 +20,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: auto;
+  margin: 10px 0;
   z-index: 99;
   display: flex;
   justify-content: space-between;
@@ -194,10 +39,14 @@ header {
   text-align: center;
 }
 
+.banner-content-layer {
+  position: relative;
+}
+
 .banner-content-layer p {
   position: absolute;
   top: 25px;
-  left: 42%;
+  left: 35%;
   font-family: "Raleway";
   font-size: 21px;
   font-weight: bold;
@@ -205,6 +54,17 @@ header {
   font-style: normal;
   text-align: left;
   color: #006cd1;
+}
+
+.right-side-arrow img,
+.left-side-arrow img {
+  padding: 0;
+}
+
+.right-side-arrow img:hover,
+.left-side-arrow img:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /*/ /////////////Our services//////////////// */
@@ -236,8 +96,18 @@ header {
   height: 327.4px;
 }
 
+#our-services-container h5,
+#our-services-container p {
+  padding: 0 3px;
+}
+
+#our-services-container div:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 #our-services-container img {
-  width: 269px;
+  width: 100%;
   height: 181px;
 }
 
@@ -247,6 +117,54 @@ header {
 
 #our-services-container p {
   margin-top: 29px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 15% auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 500px;
+  height: 400px;
+  text-align: center;
+}
+
+.modal-content h5,
+.modal-content p {
+  margin: 35px;
+}
+
+.modal-content img {
+  width: 350px;
+  height: 200px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /*/ ///////////////Watch our video tour/////////////// */
@@ -355,6 +273,11 @@ header {
   background: #ffffff;
 }
 
+.popular-package-card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 .popular-package-card p {
   font-family: "Raleway";
   font-size: 14px;
@@ -422,6 +345,13 @@ header {
   padding: 17px 30px;
 }
 
+.get-off-content input:focus {
+  color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 10px 0 #006cd1;
+  background: rgba(255, 255, 255, 0.3);
+}
+
 .btn {
   width: 155px;
   height: 50px;
@@ -437,6 +367,13 @@ header {
   font-style: normal;
   text-align: center;
   color: #08aeea;
+}
+
+.get-off button:hover {
+  cursor: pointer;
+  background: rgba(0, 97, 205, 0.4);
+  color: #ffffff;
+  border: none;
 }
 
 .get-off form {
@@ -496,7 +433,7 @@ header {
   position: absolute;
   width: 100%;
   z-index: 99;
-  margin-top: 320px;
+  padding-top: 320px;
 }
 
 .plan-your-trip h2 {
@@ -512,19 +449,37 @@ header {
   margin-top: 50px;
 }
 
+/* /////////.popular-tourism-country//////// */
+
+.plan-your-trip button:hover,
+.arrow-btn:hover {
+  background: linear-gradient(-2deg, #2af598 0%, #08aeea 100%);
+  cursor: pointer;
+}
+
+.arrow-btn a {
+  color: #ffffff;
+}
+
 .popular-tourism-country-title {
   text-align: center;
   margin: 70px 0;
 }
 .popular-tourism-country-content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  place-items: center;
 }
 
 .popular-tourism-country-card {
   width: 271px;
   height: 425px;
   position: relative;
+}
+
+.popular-tourism-country-card:hover .card-overlay {
+  opacity: 0.2;
+  cursor: pointer;
 }
 
 .popular-tourism-country-card img {
@@ -550,16 +505,15 @@ header {
   padding: 17px;
 }
 
-.card-content h3{
+.card-content h3 {
   text-align: left;
 }
 
-.card-content p{
+.card-content p {
   color: #ffffff;
 }
 
-
-.arrow-btn{
+.arrow-btn {
   width: 40px;
   height: 40px;
   border-radius: 100px;
@@ -569,7 +523,6 @@ header {
   font-size: 20px;
 }
 
-
 /* ////////////map///////////// */
 
 #map {
@@ -578,90 +531,240 @@ header {
   height: 350px;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
-.maps iframe {
+.map iframe {
   text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* ///////////footer////////// */
+/* /////////responsive////////// */
 
-footer {
-  background: #141418;
+@media screen and (max-width: 1300px) {
+  #popular-package {
+    padding: 69px 5% 71px 5%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #our-services-container {
+    gap: 10px;
+  }
+  #our-services-container div {
+    width: 260px;
+  }
+  .our-services {
+    padding: 0 10px;
+  }
+  .our-services-title {
+    margin-right: 10px;
+  }
+
+  #happy-travelers {
+    width: 100%;
+  }
+  .happy-travelers-content {
+    justify-content: center;
+    gap: 30px;
+  }
+  .happy-travelers-card {
+    padding: 65px 15px;
+    width: 300px;
+  }
+  .happy-travelers-card p {
+    padding: 0;
+  }
+  .popular-tourism-country {
+    width: 100%;
+    justify-content: center;
+  }
+  .popular-tourism-country-content {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .popular-tourism-country-card {
+    width: 400px;
+    height: 250px;
+  }
 }
 
-.footer-menu {
-  display: flex;
-  justify-content: space-between;
-  padding: 54px 95px;
+@media screen and (max-width: 1024px) {
+  .our-services {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+  .our-services h3,
+  .our-services h4,
+  .our-services-title p {
+    text-align: center;
+  }
+  #our-services-container {
+    margin: 20px auto;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  #our-services-container div {
+    width: 270.1px;
+  }
+
+  #we-achieved {
+    padding: 107px 30px 69px 30px;
+  }
+
+  .achievement {
+    padding: 0 10px;
+  }
+
+  #popular-package {
+    padding: 69px 10px 71px 10px;
+  }
+
+  .happy-travelers-content {
+    flex-wrap: wrap;
+  }
+  .happy-travelers-card {
+    margin-top: 30px;
+    gap: 0;
+  }
 }
 
-.footer-menu-column {
-  width: 245px;
+@media screen and (max-width: 925px) {
+  #our-services-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .banner-content h1 {
+    font-size: 60px;
+  }
+
+  .popular-package-card img {
+    width: 100%;
+  }
+  .popular-package-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  .popular-tourism-country-content {
+    grid-template-columns: 1fr;
+  }
 }
 
-footer h4,
-.footer-menu-column li {
-  font-family: "Raleway";
-  font-size: 15.98822021484375px;
-  font-weight: bolder;
-  line-height: 40.4761962890625px;
-  font-style: normal;
-  text-align: left;
-  color: #ffffff;
+@media screen and (max-width: 768px) {
+  .banner-content-layer img {
+    display: none;
+  }
+  .banner-content-layer p {
+    display: none;
+  }
+  .watch-our-video-tour-content {
+    width: 100%;
+    height: 314px;
+  }
+  .popular-package-card {
+    width: 267px;
+  }
+  .get-off input {
+    width: 290px;
+    height: 45px;
+  }
+  .get-off button {
+    width: 100px;
+    height: 45px;
+    font-size: 14px;
+  }
+  .plan-your-trip {
+    height: 405px;
+    padding-top: 280px;
+  }
 }
 
-.footer-menu-column li {
-  font-weight: lighter;
-  color: #dcdbdb;
+@media screen and (max-width: 600px) {
+  #our-services-container {
+    grid-template-columns: 1fr;
+  }
 }
 
-.footer-menu-links {
-  display: flex;
-  justify-content: space-between;
+@media screen and (max-width: 525px) {
+  .banner-content h1 {
+    font-size: 45px;
+  }
+  .banner-content {
+    flex-direction: column;
+  }
+  .right-side-arrow img,
+  .left-side-arrow img {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
+  .modal-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+  }
+  .modal-content h5,
+  .modal-content p {
+    margin: 20px 5px;
+  }
+  .modal-content img {
+    width: 230px;
+    height: 150px;
+  }
+  .we-achieved {
+    flex-direction: column;
+  }
+  .plan-your-trip h2 {
+    font-size: 30px;
+  }
+  .plan-your-trip button {
+    width: 130px;
+    height: 45px;
+    font-size: 14px;
+  }
+  .achievement {
+    padding-bottom: 30px;
+  }
+  .achievement img {
+    margin-bottom: 5px;
+  }
+
+  .get-off h2 {
+    margin-top: 30px;
+    font-size: 30px;
+  }
+  .get-off h6 {
+    margin-bottom: 30px;
+  }
+  .get-off form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .popular-tourism-country-card {
+    width: 271px;
+    height: 425px;
+  }
 }
 
-.footer-menu-column {
-  list-style: none;
-}
-
-.footer-subscibtion {
-  font-family: "roboto";
-}
-
-.footer-subscribe {
-  display: flex;
-  align-items: center;
-}
-
-.footer-subscribe input {
-  width: 300px;
-  height: 47.6px;
-  padding: 17px 10px;
-}
-
-.footer-subscribe input::placeholder {
-  color: #1a1a1b;
-}
-
-.footer-subscribe button {
-  width: 43px;
-  height: 47.6px;
-  border-radius: 0;
-  background: linear-gradient(-2deg, #08aeea 0%, #2af598 100%);
-}
-
-.footer-rights {
-  padding: 26px 0;
-}
-
-.footer-rights p {
-  font-family: "Raleway";
-  font-size: 19.98526954650879px;
-  font-weight: 500;
-  line-height: 23.982322692871094px;
-  font-style: normal;
-  text-align: center;
-  color: #dcdbdb;
-  text-align: center;
+@media screen and (max-width: 414px) {
+  #our-services-container {
+    grid-template-columns: 1fr;
+  }
+  .happy-travelers-card {
+    width: 267px;
+  }
+  .happy-travelers-card p {
+    width: 100%;
+  }
 }
