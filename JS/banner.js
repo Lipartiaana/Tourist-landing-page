@@ -1,11 +1,11 @@
 // creates slider
 
 const images = [
-  ".../Assets/banner/1.png",
-  ".../Assets/banner/2.png",
-  ".../Assets/banner/3.png",
-  ".../Assets/banner/4.png",
-  ".../Assets/banner/5.png",
+  "./Assets/banner/1.png",
+  "./Assets/banner/2.png",
+  "./Assets/banner/3.png",
+  "./Assets/banner/4.png",
+  "./Assets/banner/5.png",
 ];
 
 const bannerImage = document.getElementById("banner-image");
