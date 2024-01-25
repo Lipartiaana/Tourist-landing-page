@@ -12,6 +12,10 @@ body {
   justify-content: center;
 }
 
+header {
+  width: 100%;
+}
+
 .wide {
   width: 100%;
   max-width: 1360px;
@@ -165,7 +169,7 @@ header {
 }
 
 .menu {
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .menu a {
@@ -177,6 +181,7 @@ header {
   text-align: center;
   color: #303134;
   position: relative;
+  transition: all 0.3s ease;
 }
 
 .menu a:hover {
@@ -238,6 +243,7 @@ header {
 
   #menu-toggle:checked ~ .menu {
     display: block;
+    animation: burgerMenuOpen 0.5s ease-in-out;
   }
 
   .menu {
@@ -388,8 +394,13 @@ footer h4,
   }
 }
 @media screen and (max-width: 768px) {
+  .footer-menu {
+    padding: 20px;
+    margin-left: 30px;
+    flex-direction: column;
+  }
   .footer-menu-links {
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
   }
   .footer-menu-column {
@@ -397,5 +408,15 @@ footer h4,
   }
   .footer-subscribe input {
     width: 190px;
+  }
+}
+
+/* Animations */
+@keyframes burgerMenuOpen {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: 1;
   }
 }

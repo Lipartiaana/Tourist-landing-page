@@ -35,7 +35,7 @@ divs.forEach((div) => {
 
     const modalText = document.getElementById("modal-text");
     modalText.textContent = div.querySelector("p").textContent;
-    modal.style.display = "block";
+    modal.style.display = "flex";
 
     const close = modal.querySelector(".close");
     close.addEventListener("click", () => {

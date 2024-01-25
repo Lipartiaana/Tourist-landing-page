@@ -17,10 +17,10 @@
 
 .banner-container {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 10px 0;
+  transform: translate(-50%, 0%);
+  margin: 170px 0;
   z-index: 99;
   display: flex;
   justify-content: space-between;
@@ -59,6 +59,7 @@
 .right-side-arrow img,
 .left-side-arrow img {
   padding: 0;
+  transition: all 0.3s ease;
 }
 
 .right-side-arrow img:hover,
@@ -94,11 +95,12 @@
 #our-services-container div {
   width: 270.1px;
   height: 327.4px;
+  transition: all 0.3s ease-out;
 }
 
 #our-services-container h5,
 #our-services-container p {
-  padding: 0 3px;
+  padding: 0 8px;
 }
 
 #our-services-container div:hover {
@@ -112,17 +114,19 @@
 }
 
 #our-services-container h5 {
-  margin: 26px 0 12px 0;
+  margin: 20px 0 12px 0;
 }
 
 #our-services-container p {
-  margin-top: 29px;
+  margin-top: 25px;
 }
 
 .modal {
   display: none;
   position: fixed;
-  z-index: 1001;
+  justify-content: center;
+  align-items: center;
+  z-index: 1003;
   left: 0;
   top: 0;
   width: 100vw;
@@ -134,12 +138,12 @@
 
 .modal-content {
   background-color: #ffffff;
-  margin: 15% auto;
-  padding: 30px;
-  border: 1px solid #888;
+  padding: 0 30px;
+  border: none;
   width: 500px;
-  height: 400px;
+  height: auto;
   text-align: center;
+  border-radius: 5px;
 }
 
 .modal-content h5,
@@ -148,16 +152,22 @@
 }
 
 .modal-content img {
-  width: 350px;
-  height: 200px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 /* The Close Button */
 .close {
+  position: relative;
+  top: 0px;
+  right: -20px;
   color: #aaaaaa;
   float: right;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .close:hover,
@@ -271,6 +281,7 @@
   height: 358px;
   filter: drop-shadow(0px 0px 6px rgba(101, 101, 101, 0.2));
   background: #ffffff;
+  transition: all 0.3s ease-out;
 }
 
 .popular-package-card:hover {
@@ -343,6 +354,11 @@
   border-radius: 25px;
   background: rgba(255, 255, 255, 0.03);
   padding: 17px 30px;
+  transition: all 0.3s ease-out;
+}
+
+.get-off-content input:hover {
+  box-shadow: 0 0 10px 0 #006cd1;
 }
 
 .get-off-content input:focus {
@@ -367,6 +383,7 @@
   font-style: normal;
   text-align: center;
   color: #08aeea;
+  transition: all 0.4s ease-in;
 }
 
 .get-off button:hover {
@@ -447,15 +464,17 @@
   color: #ffffff;
   border: none;
   margin-top: 50px;
+  transition: all 0.5s ease;
 }
-
-/* /////////.popular-tourism-country//////// */
 
 .plan-your-trip button:hover,
 .arrow-btn:hover {
   background: linear-gradient(-2deg, #2af598 0%, #08aeea 100%);
+  color: #026c92;
   cursor: pointer;
 }
+
+/* /////////.popular-tourism-country//////// */
 
 .arrow-btn a {
   color: #ffffff;
@@ -475,11 +494,13 @@
   width: 271px;
   height: 425px;
   position: relative;
+  cursor: pointer;
 }
 
 .popular-tourism-country-card:hover .card-overlay {
   opacity: 0.2;
   cursor: pointer;
+  transition: all 0.4s ease;
 }
 
 .popular-tourism-country-card img {
@@ -658,12 +679,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .banner-content-layer img {
-    display: none;
-  }
-  .banner-content-layer p {
-    display: none;
-  }
   .watch-our-video-tour-content {
     width: 100%;
     height: 314px;
@@ -683,6 +698,9 @@
   .plan-your-trip {
     height: 405px;
     padding-top: 280px;
+  }
+  .modal-content {
+    width: 80%;
   }
 }
 
@@ -705,22 +723,19 @@
     height: 40px;
     margin: 0;
   }
-  .modal-content {
-    background-color: #ffffff;
-    margin: 15% auto;
-    padding: 30px;
-    border: 1px solid #888;
-    width: 300px;
-    height: 400px;
-    text-align: center;
+
+  .banner-container {
+    left: 48%;
+  }
+  .banner-content-layer p {
+    left: 25%;
   }
   .modal-content h5,
   .modal-content p {
     margin: 20px 5px;
   }
-  .modal-content img {
-    width: 230px;
-    height: 150px;
+  .modal img {
+    height: 200px;
   }
   .we-achieved {
     flex-direction: column;
@@ -751,9 +766,18 @@
     flex-direction: column;
     align-items: center;
   }
-  .popular-tourism-country-card {
-    width: 271px;
-    height: 425px;
+  .popular-tourism-country-card,
+  .popular-package-card,
+  .happy-travelers-card,
+  #our-services-container div {
+    width: 80%;
+    height: 450px;
+    margin: auto;
+  }
+
+  #our-services-container div img {
+    height: 300px;
+    object-fit: cover;
   }
 }
 
@@ -761,10 +785,33 @@
   #our-services-container {
     grid-template-columns: 1fr;
   }
-  .happy-travelers-card {
-    width: 267px;
-  }
   .happy-travelers-card p {
     width: 100%;
+  }
+
+  .banner-content-layer img {
+    width: 180px;
+  }
+
+  .banner-content h1 {
+    font-size: 30px;
+  }
+
+  .banner-content p {
+    font-size: 16px;
+  }
+  .banner-content-layer p {
+    font-size: 16px;
+    margin-top: -10px;
+  }
+}
+
+@media (max-height: 500px) {
+  .modal-content img {
+    height: 150px;
+  }
+
+  .menu a {
+    line-height: 20px;
   }
 }
