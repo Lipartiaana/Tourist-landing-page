@@ -1,5 +1,17 @@
 //////generates api cards
 
+const generateNatureImageUrl = (width, height, randomize = false) => {
+  const baseImageUrl = "https://loremflickr.com/";
+  let imageUrl = `${baseImageUrl}${width}/${height}/nature`;
+
+  if (randomize) {
+    const lockValue = Math.floor(Math.random() * 100000);
+    imageUrl += `?lock=${lockValue}`;
+  }
+
+  return imageUrl;
+};
+
 const imageCards = document.getElementById("image-cards-container");
 
 fetch(
@@ -9,7 +21,7 @@ fetch(
   .then((data) => {
     data.data.forEach((image) => {
       const img = document.createElement("img");
-      img.src = image.url;
+      img.src = generateNatureImageUrl(300, 200, true);
       img.alt = image.title;
 
       const title = document.createElement("h5");
